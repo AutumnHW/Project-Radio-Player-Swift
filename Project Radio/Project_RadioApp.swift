@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
-
+import AVFoundation
 @main
 struct Project_RadioApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView{
+                prfmView()
+                    .tabItem{
+                        Label("ProjectFM", systemImage: "mic")
+                    }
+                
+                RuggedRaw94()
+                    .tabItem{
+                        Label("RuggedRaw94", systemImage: "mic")
+                    }
+                DogStarFM()
+                    .tabItem{
+                        Label("DogStarFM", systemImage: "mic")
+                    }
+                
+            }
+        }
         }
     }
-}
+

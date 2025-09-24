@@ -1,0 +1,64 @@
+//
+//  radioPlayerView 2.swift
+//  Project Radio
+//
+//  Created by Autumn Williams on 9/24/25.
+//
+
+
+//
+//  radioPlayerView.swift
+//  Project Radio
+//
+//  Created by Autumn Williams on 9/22/25.
+//
+
+import SwiftUI
+
+struct prfmView: View {
+    var body: some View {
+        
+      ZStack {
+            Image("prfmbackground")
+              .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: 10)
+          VStack {
+              Image("prfmcover")
+                  .resizable()
+                  .scaledToFit()
+                  .frame(width: 380, height: 300)
+                  .border(Color.white, width: 3)
+              createButton(label: "Play") {
+                  AudioManager.shared.playRadio(source:"https://radio.projectradio.org/listen/projectfm/radio.mp3")
+              }
+              /*
+              createButton(label: "Play") {
+                  AudioManager.shared.play()
+              }
+              */
+              createButton(label: "Pause") {
+                  AudioManager.shared.pause()
+              }
+          }
+            
+        }
+       
+        
+    }
+    
+    private func createButton(
+        label: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        return Button(label, action: action)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(20)
+            .foregroundColor(.white)
+    }
+}
+#Preview {
+    prfmView()
+}
