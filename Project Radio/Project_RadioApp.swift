@@ -7,27 +7,24 @@
 
 import SwiftUI
 import AVFoundation
+
 @main
 struct Project_RadioApp: App {
+    init() {
+        AudioManager.shared.activateSession()
+    }
+
     var body: some Scene {
         WindowGroup {
-            TabView{
+            TabView {
                 prfmView()
-                    .tabItem{
-                        Label("ProjectFM", systemImage: "mic")
-                    }
-                
+                    .tabItem { Label("ProjectFM", systemImage: "mic") }
                 RuggedRaw94()
-                    .tabItem{
-                        Label("RuggedRaw94", systemImage: "mic")
-                    }
-                DogStarFM()
-                    .tabItem{
-                        Label("DogStarFM", systemImage: "mic")
-                    }
-                
+                    .tabItem { Label("RuggedRaw94", systemImage: "mic") }
+                dogstarfmView()
+                    .tabItem { Label("DogStarFM", systemImage: "mic") }
             }
         }
-        }
     }
+}
 

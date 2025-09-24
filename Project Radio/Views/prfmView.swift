@@ -24,13 +24,21 @@ struct prfmView: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .blur(radius: 10)
+                
           VStack {
               Image("prfmcover")
                   .resizable()
                   .scaledToFit()
                   .frame(width: 380, height: 300)
-                  .border(Color.white, width: 3)
+                  .cornerRadius(50)
+                  .overlay(
+                      RoundedRectangle(cornerRadius: 50)
+                          .stroke(.gray, lineWidth: 5)
+                  )
+        
+              HStack{
               createButton(label: "Play") {
+                  
                   AudioManager.shared.playRadio(source:"https://radio.projectradio.org/listen/projectfm/radio.mp3")
               }
               /*
@@ -38,8 +46,9 @@ struct prfmView: View {
                   AudioManager.shared.play()
               }
               */
-              createButton(label: "Pause") {
-                  AudioManager.shared.pause()
+                  createButton(label: "Pause") {
+                      AudioManager.shared.pause()
+                  }
               }
           }
             

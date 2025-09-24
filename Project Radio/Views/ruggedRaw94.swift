@@ -10,20 +10,12 @@ import AVFoundation
 
 struct RuggedRaw94: View {
     var body: some View {
-        Text("ProjectFM Page")
-        Button("Play"){
-            
-        }
-        .buttonStyle(.bordered)
-        //playRadio();
-            
         
-        }
-        }
         
-    // }
-
+    }
+}
 
 #Preview {
-    ProjectFM()
+    RuggedRaw94()
+
 }

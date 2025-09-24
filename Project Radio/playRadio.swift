@@ -10,17 +10,18 @@ import AVFoundation
 final class AudioManager {
   static let shared = AudioManager()
 
-  private var player: AVPlayer?
+   var player: AVPlayer?
 
-  private var session = AVAudioSession.sharedInstance()
+   var session = AVAudioSession.sharedInstance()
 
   private init() {}
-private func activateSession() {
+ func activateSession() {
         do {
             try session.setCategory(
                 .playback,
                 mode: .default,
-                options: []
+                //policy: .longFormAudio,
+                options: [.mixWithOthers]
             )
         } catch _ {}
         
@@ -28,9 +29,7 @@ private func activateSession() {
             try session.setActive(true, options: .notifyOthersOnDeactivation)
         } catch _ {}
         
-        do {
-            try session.overrideOutputAudioPort(.speaker)
-        } catch _ {}
+  
     }
     func playRadio(source: String){
         let url = URL(string: source)
