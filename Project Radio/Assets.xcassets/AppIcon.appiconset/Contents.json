@@ -13,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "pr-appicon-new-dark.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -24,6 +25,7 @@
           "value" : "tinted"
         }
       ],
+      "filename" : "pr-appicon-new-clear.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
