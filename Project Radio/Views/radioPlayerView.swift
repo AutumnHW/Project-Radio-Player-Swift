@@ -11,7 +11,7 @@ struct radioPlayerView: View {
     var body: some View {
         VStack {
             createButton(label: "Start") {
-                AudioManager.shared.playRadio(source:"https://radio.projectradio.org/listen/projectfm/radio.mp3")
+                AudioManager.shared.playRadio(source:"https://signal.projectradio.org/listen/prfm/radio.mp3")
             }
             
             createButton(label: "Play") {
